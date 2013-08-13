@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!-- saved from url=(0061)http://tympanus.net/Tutorials/OriginalHoverEffects/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Original Hover Effects with CSS3</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Original Hover Effects with CSS3">
+        <meta name="keywords" content="css3, transitions, thumbnail, animation, hover, effect, description, caption">
+        <meta name="author" content="Alessio Atzeni for Codrops">
+        <link rel="shortcut icon" href="http://tympanus.net/Tutorials/favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="./files/demo.css">
+        <link rel="stylesheet" type="text/css" href="./files/style_common.css">
+        <link rel="stylesheet" type="text/css" href="./files/style1.css">
+        <link href="./files/css" rel="stylesheet" type="text/css">
+	
+    <link rel="stylesheet" type="text/css" href="./files/demoad.css"><script type="text/javascript" async="" src="./files/pro.js"></script><link type="text/css" rel="stylesheet" href="chrome-extension://cpngackimfmofbokmjmljamhdncknpmg/style.css"><script type="text/javascript" charset="utf-8" src="chrome-extension://cpngackimfmofbokmjmljamhdncknpmg/page_context.js"></script><script type="text/javascript" id="_bsaPRO_js" src="./files/saved_resource" async="async"></script><script src="./files/ad.js" async=""></script></head>
+    <body screen_capture_injected="true">
+        <div class="container">
+            <h1>Demo to show hover effects adapted for the iPad<span>modified from http://tympanus.net/Tutorials/OriginalHoverEffects/index.html</span></h1>
+            <div class="main">
+                <div class="view view-first">
+                    <img src="./files/1.jpg">
+                    <div class="mask">
+                        <h2>Hover Style #1</h2>
+                        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+                        <a href="http://tympanus.net/Tutorials/OriginalHoverEffects/index.html#" class="info">Read More</a>
+                    </div>
+                </div>  
+                <div class="view view-first">
+                    <img src="./files/2.jpg">
+                    <div class="mask">
+                        <h2>Hover Style #1</h2>
+                        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+                        <a href="http://tympanus.net/Tutorials/OriginalHoverEffects/index.html#" class="info">Read More</a>
+                    </div>
+                </div>  
+                <div class="view view-first">
+                    <img src="./files/3.jpg">
+                    <div class="mask">
+                        <h2>Hover Style #1</h2>
+                        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+                        <a href="http://tympanus.net/Tutorials/OriginalHoverEffects/index.html#" class="info">Read More</a>
+                    </div>
+                </div>  
+                <div class="view view-first">
+                    <img src="./files/4.jpg">
+                    <div class="mask">
+                        <h2>Hover Style #1</h2>
+                        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+                        <a href="http://tympanus.net/Tutorials/OriginalHoverEffects/index.html#" class="info">Read More</a>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    
+    
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+
+
+        $('.view-first').bind('touchstart touchend', function(e) {
+            // e.preventDefault();
+            $(this).toggleClass('hover_effect');
+        });
+
+        $(document).bind('touchstart touchend', function(e) {
+          $('.view-first').removeClass('hover_effect');
+        });
+
+      });
+
+    </script>
+
+</body></html>
