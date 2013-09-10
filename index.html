@@ -60,26 +60,38 @@
       $(document).ready(function() {
 
         var $all = $('.view-first');
-        $all.bind('touchstart', function(e) {
-            var $this = $(this);
+        var isTouchBrowser = ('ontouchstart' in document.documentElement);
 
-            var hasHover = $this.hasClass('hover_effect');
-            var isLink = $(e.target).hasClass('info');
+        if(isTouchBrowser){
+            $all.bind('touchstart', function(e) {
+                var $this = $(this);
 
-            if(!hasHover){
+                var hasHover = $this.hasClass('hover_effect');
+                var isLink = $(e.target).hasClass('info');
+
+                if(!hasHover){
+                    $all.removeClass('hover_effect');
+                    $(this).addClass('hover_effect');
+                    e.preventDefault();
+                    return false;
+                }else if(isLink){
+                    //so that hover_effect state will not dissapear before the link is loaded
+                    e.stopPropagation();
+                }
+            });
+
+            $(document).bind('touchstart', function(e) {
                 $all.removeClass('hover_effect');
-                $(this).addClass('hover_effect');
-                e.preventDefault();
-                return false;
-            }else if(isLink){
-                //so that hover_effect state will not dissapear before the link is loaded
-                e.stopPropagation();
-            }
-        });
+            });
 
-        $(document).bind('touchstart', function(e) {
-            $all.removeClass('hover_effect');
-        });
+        }else{
+            $all.hover(function(e) {
+                $(this).addClass('hover_effect');
+            },
+            function(e) {
+                $(this).removeClass('hover_effect');
+            });
+        }
 
       });
 
