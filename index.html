@@ -60,12 +60,12 @@
       $(document).ready(function() {
 
 
-        $('.view-first').bind('touchstart touchend', function(e) {
-            // e.preventDefault();
+        $('.view-first').bind('touchstart', function(e) {
+            e.preventDefault();
             $(this).toggleClass('hover_effect');
         });
 
-        $(document).bind('touchstart touchend', function(e) {
+        $(document).bind('touchstart', function(e) {
           $('.view-first').removeClass('hover_effect');
         });
 
