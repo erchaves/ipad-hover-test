@@ -59,14 +59,20 @@
     <script type="text/javascript">
       $(document).ready(function() {
 
-
-        $('.view-first').bind('touchstart', function(e) {
-            e.preventDefault();
-            $(this).toggleClass('hover_effect');
+        var $all = $('.view-first');
+        $all.bind('touchstart', function(e) {
+            var $this = $(this);
+            var hasHover = $this.hasClass('hover_effect');
+            if(!hasHover){
+                $all.removeClass('hover_effect');
+                $(this).addClass('hover_effect');
+                e.preventDefault();
+                return false;
+            }
         });
 
         $(document).bind('touchstart', function(e) {
-          $('.view-first').removeClass('hover_effect');
+            $all.removeClass('hover_effect');
         });
 
       });

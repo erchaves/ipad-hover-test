@@ -4,7 +4,14 @@
    opacity: 0;
 }
 
-.view-first:hover .mask {
+/*.view-first:hover .mask {
+   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+   filter: alpha(opacity=100);
+   opacity: 100;
+}
+*/
+
+.view-first.hover_effect .mask {
    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
    filter: alpha(opacity=100);
    opacity: 100;
