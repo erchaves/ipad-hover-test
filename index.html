@@ -62,12 +62,18 @@
         var $all = $('.view-first');
         $all.bind('touchstart', function(e) {
             var $this = $(this);
+
             var hasHover = $this.hasClass('hover_effect');
+            var isLink = $(e.target).hasClass('info');
+
             if(!hasHover){
                 $all.removeClass('hover_effect');
                 $(this).addClass('hover_effect');
                 e.preventDefault();
                 return false;
+            }else if(isLink){
+                //so that hover_effect state will not dissapear before the link is loaded
+                e.stopPropagation();
             }
         });
 
